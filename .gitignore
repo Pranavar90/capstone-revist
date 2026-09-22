@@ -1,0 +1,42 @@
+# ─── Datasets (re-download + re-process on each machine; never push) ───
+data/
+*.zip
+*.rar
+
+# ─── Models & training outputs (large binaries) ───
+# The released checkpoint IS committed, via Git LFS (see .gitattributes).
+# Git cannot re-include a file whose parent directory is excluded, so the directories are
+# re-included step by step, and the final negation must come AFTER *.pth (last match wins).
+*.pth
+*.pkl
+outputs/*
+!outputs/checkpoints/
+outputs/checkpoints/*
+!outputs/checkpoints/mamba_best.pth
+
+# ─── Python ───
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+
+# ─── Node / frontend ───
+**/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+
+# ─── Kaggle API creds (secret — never push) ───
+kaggle.json
+.kaggle/
+
+# ─── IDE / OS / misc ───
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.output

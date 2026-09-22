@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-multipart
+# RTX 50-series (Blackwell, sm_120) needs a cu128+ build — the default PyPI
+# torch wheel (cu124) will fail with "no kernel image is available". Install with:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+torch
+torchvision
+opencv-python
+tqdm
+optuna
+matplotlib
+numpy
+pillow
+axios
+kaggle

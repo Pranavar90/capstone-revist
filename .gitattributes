@@ -1,0 +1,4 @@
+# Trained checkpoints are large binaries — store them in Git LFS, not as plain blobs.
+# `git lfs install` + `git lfs track` must run BEFORE the first `git add` of a .pth,
+# otherwise the blob enters history as a normal object and cannot be pruned afterwards.
+outputs/checkpoints/*.pth filter=lfs diff=lfs merge=lfs -text
